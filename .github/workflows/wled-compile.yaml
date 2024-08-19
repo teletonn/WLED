@@ -31,7 +31,7 @@ jobs:
         npm install
         echo '[env:custom_build]' >>platformio.ini
         echo 'extends = env:esp01_1m_full' >>platformio.ini
-        echo 'build_flags = ${env:esp01_1m_full.build_flags} -D WLED_DISABLE_OTA -D WLED_ENABLE_MQTT -D WLED_ENABLE_WEBSOCKETS -D WLED_DISABLE_ALEXA -D WLED_DISABLE_HUESYNC -D WLED_DISABLE_2D -D LEDPIN=0 -D BTNPIN=2 -D DEFAULT_LED_COUNT=10 -D WLED_WATCHDOG_TIMEOUT=300 ${esp32.AR_build_flags} -D USERMOD_PIRSWITCH -D USERMOD_SN_PHOTORESISTOR' >>platformio.ini
+        echo 'build_flags = ${env:esp01_1m_full.build_flags} -D WLED_ENABLE_MQTT -D WLED_DISABLE_ALEXA -D WLED_DISABLE_HUESYNC -D LEDPIN=0 -D BTNPIN=2 -D DEFAULT_LED_COUNT=10 ${esp32.AR_build_flags} -D USERMOD_PIRSWITCH' >>platformio.ini
         echo 'lib_deps = ' >>platformio.ini
         echo '  ${env:esp01_1m_full.lib_deps}' >>platformio.ini
         echo '  ${esp32.AR_lib_deps}' >>platformio.ini
